@@ -59,6 +59,7 @@ if __name__ == "__main__":
             i = 0
             for col_index, exp in enumerate(COLUMNS):
                 ax = axs[row_index, col_index]
+                # ax = axs[col_index]
 
                 # Axis formatting
                 ax.set_xscale("log")
@@ -111,6 +112,7 @@ if __name__ == "__main__":
 
         # Shared legend at bottom
         handles, labels = axs[0, 0].get_legend_handles_labels()
+        # handles, labels = axs[0].get_legend_handles_labels()
         fig.legend(
             handles,
             labels,
@@ -123,6 +125,6 @@ if __name__ == "__main__":
         )
 
         # plt.tight_layout(rect=[0, 0, 1, 0.95])
-        out_file = path.join(path.dirname(path.abspath(__file__)), "l2_line_search.pdf")
+        out_file = path.join(path.dirname(path.abspath(__file__)), "l2_5d_large.pdf")
         plt.savefig(out_file, bbox_inches="tight")
         print(f"Saved combined figure to {out_file}")

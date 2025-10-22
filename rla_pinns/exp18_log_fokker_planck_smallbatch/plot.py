@@ -18,7 +18,7 @@ from rla_pinns.wandb_utils import (
 )
 
 entity = "rla-pinns"  # team name on wandb
-project = "exp5_log_fokker_planck"  # name from the 'Projects' tab on wandb
+project = "exp18_log_fokker_planck_smallbatch"  # name from the 'Projects' tab on wandb
 
 # information for title
 equation = "log-fokker-planck-isotropic"
@@ -42,9 +42,9 @@ sweep_ids = {  # ids from the wandb agent
     # "p6bgdypg": "Adam",
     # "fdohey43": "ENGD",
     # "d5ujt0u0": "Hessian-free",
-    "zbscn1ou": "ENGD (Woodbury)",
+    "w25znk10": "ENGD (Woodbury)",
     # "nbip4xj7": "ENGD (Nystrom)",
-    "os6ivmta": "SPRING",
+    # "os6ivmta": "SPRING",
     # "6v0ucr0i": "SPRING (Nystrom)",
 }
 

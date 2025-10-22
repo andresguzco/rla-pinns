@@ -46,7 +46,7 @@ sweep_ids = {  # ids from the wandb agent
     # "fsxpdoms": "ENGD (Nystrom)",
     "ge090ily": "SPRING",
     "so66v55d": "SPRING (Nystrom)",
-    "il6ipce1": "SPRING (Naive)",
+    # "il6ipce1": "SPRING (Naive)",
 }
 
 # color options: https://jiffyclub.github.io/palettable/colorbrewer/

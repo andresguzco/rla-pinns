@@ -167,6 +167,8 @@ class WandbRunFormatter:
         },
         "RNGD": {
             "RNGD_damping": "damping",
+            "RNGD_momentum": "momentum",
+            "RNGD_lr": "learning rate",
         },
     }
 

@@ -18,12 +18,12 @@ from rla_pinns.wandb_utils import (
 )
 
 entity = "rla-pinns"  # team name on wandb
-project = "exp4_poisson100d"  # name from the 'Projects' tab on wandb
+project = "exp15_heat4d_fixed"  # name from the 'Projects' tab on wandb
 
 # information for title
-equation = "poisson"
-architecture = "mlp-tanh-768-768-512-512"
-dim_Omega = 100
+equation = "heat"
+architecture = "mlp-tanh-256-256-128-128"
+dim_Omega = 5
 num_params = sum(
     p.numel()
     for layer in set_up_layers(architecture, equation, dim_Omega)
@@ -42,9 +42,9 @@ sweep_ids = {  # ids from the wandb agent
     # "p6bgdypg": "Adam",
     # "fdohey43": "ENGD",
     # "d5ujt0u0": "Hessian-free",
-    "elqquiw6": "ENGD (Woodbury)",
+    "naqwf42n": "ENGD (Woodbury)",
     # "dvtd4rth": "ENGD (Nystrom)",
-    "ktc67x29": "SPRING",
+    "g8degqam": "SPRING",
     # "qf0s6jg3": "SPRING (Nystrom)",
 }
 

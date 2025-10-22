@@ -46,6 +46,7 @@ If you don't use `conda`, set up your preferred environment and run
 ```bash
 pip install -e ."[lint,test]"
 ```
+
 to install the package in editable mode, along with all required development dependencies
 (the quotes are for OS compatibility, see
 [here](https://github.com/mu-editor/mu/issues/852#issuecomment-498759372)).
@@ -59,13 +60,12 @@ You can also run them locally, as they are managed via `make`:
 
 - Run all linters with `make lint`, or separately with:
 
-    - Run auto-formatting and import sorting with `make black` and `make isort`
+- Run auto-formatting and import sorting with `make black` and `make isort`
 
-    - Run linting with `make flake8`
+- Run linting with `make flake8`
 
-    - Run docstring checks with `make pydocstyle-check` and `make darglint-check`
+- Run docstring checks with `make pydocstyle-check` and `make darglint-check`
 
 ## #Documentation
 
 We use the [Google docstring convention](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) and `mkdocs` which allows using markdown syntax in a docstring to achieve formatting.
-

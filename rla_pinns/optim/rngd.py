@@ -68,6 +68,12 @@ def parse_randomized_args(verbose: bool = False, prefix="RNGD_") -> Namespace:
         default=0.0,
         help="Momentum parameter for the optimizer.",
     )
+    parser.add_argument(
+        f"--{prefix}norm_constraint",
+        type=float,
+        default=0.001,
+        help="Norm constraint parameter for the SPRING version of the optimizer.",
+    )
 
     args = parse_known_args_and_remove_from_argv(parser)
 
@@ -125,6 +131,7 @@ class RNGD(Optimizer):
         approximation: str = "exact",
         rank_val: int = 0,
         momentum: float = 0.0,
+        norm_constraint: float = 0.001,
         *,
         maximize: bool = False,
     ):
@@ -138,6 +145,7 @@ class RNGD(Optimizer):
             approximation=approximation,
             rank_val=rank_val,
             equation=equation,
+            norm_constraint=norm_constraint,
             beta=0.0,
             alpha=0.0,
         )
@@ -221,11 +229,20 @@ class RNGD(Optimizer):
     ) -> None:
         (group,) = self.param_groups
         lr = group["lr"]
+        momentum = group["momentum"]
+        norm_constraint = group["norm_constraint"]
         params = group["params"]
 
         if isinstance(lr, float):
+            
+            if momentum != 0.0:
+                norm_phi = sum([(self.state[p]["phi"] ** 2).sum() for p in params]).sqrt()
+                scale = min(lr, (sqrt(norm_constraint) / norm_phi).item())
+            else:
+                scale = lr
+
             for p, d in zip(params, directions):
-                p.data.add_(d, alpha=lr)
+                p.data.add_(d, alpha=scale)
 
         else:
             if lr[0] == "grid_line_search":
