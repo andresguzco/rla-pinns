@@ -25,7 +25,7 @@
 
 [Description to be added.]
 
-The schema of EF-VFM is presented in the figure above. For more details, please refer to [our paper](https://arxiv.org/abs/2505.12149).
+The timeline of VMC and PINNs is presented in the figure above. For more details, please refer to [our paper](https://arxiv.org/abs/2505.12149).
 
 ## Developer guide
 
@@ -66,6 +66,18 @@ You can also run them locally, as they are managed via `make`:
 
 - Run docstring checks with `make pydocstyle-check` and `make darglint-check`
 
-## #Documentation
+### Documentation
 
 We use the [Google docstring convention](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) and `mkdocs` which allows using markdown syntax in a docstring to achieve formatting.
+
+## Citation
+
+```@inproceedings{
+guzmancordero2025improvingengd,
+title={Improving Energy Natural Gradient Descent through Woodbury, Momentum, and Randomization},
+author={Andr\'es Guzm\'an-Cordero and Felix Dangel and Gil Goldshlager and Marius Zeinhofer},
+booktitle={The Thirty-Ninth Annual Conference on Neural Information Processing Systems},
+year={2025},
+url={https://arxiv.org/abs/2505.12149}
+}
+```
